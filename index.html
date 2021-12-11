@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+  <script src="script.js"></script>
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <img id="menuImg" onclick="toggleNav()" src="menu.png" alt="Menu Button">
+      <h1>Vacinação</h1>
+      <botao>
+      </botao>
+    </header>
+
+    <nav>
+      <ul id="listBar">
+        <li><span class="linklike" data-panel="login">Login</span></li>
+        <li><span class="linklike" data-panel="lMun">Listas Municipais</span></li>
+        <li><span class="linklike" data-panel="agenda">Agenda</span></li>
+        <!--<li id="dummyRegista"><span class="linklike" data-panel="registo">Registar Utente</span></li>-->
+      </ul>
+    </nav>
+
+    <main>
+      <div class="panel" id="profile">
+
+
+      </div>
+      <div class="panel wrapper fadeInDown" id="login">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Sign In </h2>
+
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input id="log" type="button" class="fadeIn fourth" value="Log In">
+          </form>
+
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="panel" id="lMun">
+        <table class="listaView">
+          <thead>
+            <tr>
+              <td>Utente</td>
+              <td>Nome</td>
+              <td class="selector">Idade <select id="idade" class="seleTable" name="idade" onclick="showPanel('lMun')">
+                  <option value="noFilter">Sem Filtro</option>
+                  <option value="0-18">0-18</option>
+                  <option value="19-35">19-35</option>
+                  <option value="36-50">36-50</option>
+                  <option value="51-65">51-65</option>
+                  <option value="66+">66+</option>
+                </select></td>
+              <td>Estado</td>
+              <td class="selector">Município <select id="municipio" class="seleTable" name="municipio" onclick="showPanel('lMun')">
+                  <option value="noFilter">Sem Filtro</option>
+                  <option value="Lisboa">Lisboa</option>
+                  <option value="Oeiras">Oeiras</option>
+                  <option value="Sintra">Sintra</option>
+                  <option value="Cascais">Cascais</option>
+                  <option value="Odivelas">Odivelas</option>
+                </select></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel" id="agenda">
+        <div class="month">
+          <ul>
+            <li>
+              <select id="meses" name="month">
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select id="year" name="year">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="days">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="registo">
+        <h3>Dummy feature, for test purposes only</h3><br>
+        <form id="formCria">
+          <ul id="listIn">
+            <li>
+              <label>Nº de Utente: </label>
+              <input class="inForm" type="text" name="" value="">
+            </li>
+            <li>
+              <label>Nome: </label>
+              <input class="inForm" type="text" name="" value="">
+            </li>
+            <li>
+              <label>Idade: </label>
+              <input class="inForm" type="text" name="" value="">
+            </li>
+            <li>
+              <label>1ª Marcação: </label>
+              <input class="inForm" type="date" name="" value="">
+            </li>
+            <li>
+              <label>2ª Marcação: </label>
+              <input class="inForm" type="date" name="" value="">
+            </li>
+            <li>
+              <label>Contacto: </label>
+              <input class="inForm" type="text" name="" value="">
+            </li>
+            <li>
+              <label>Município: </label>
+              <input class="inForm" type="text" name="" value="">
+            </li>
+            <li>
+              <label>Observações do médico: </label>
+            </li>
+            <li>
+              <input class="inForm" type="text" name="" value="" size="40">
+            </li>
+          </ul>
+          <input class="inForm" type="button" value="Submit" onclick="criarUtente()">
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,630 @@
+/*Positioning*/
+
+h3{
+  padding-left: 10px;
+}
+
+#app {
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 250px auto;
+    grid-template-areas:
+        "head head"
+        "main  main";
+    max-width: 1200px;
+    height: 96vh;
+    margin: 8px auto;
+}
+
+#menuImg{
+    grid-area: ham;
+    cursor: pointer;
+    height: 85px;
+    width: 85px;
+    padding: 10px;
+}
+
+
+
+#backImg{
+    grid-area: ham;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 18px 10px 10px 18px;
+}
+
+header {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: 300px 600px 300px;
+    grid-template-areas:
+        "ham titulo botao";
+    max-width: 1200px;
+}
+
+nav {
+    display: none;
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    overflow-y: auto;
+}
+
+form{
+  padding: 10px;
+}
+
+#listIn li{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    height: 75px;
+    position: absolute;
+    padding: 10px;
+}
+
+header h1 {
+    grid-area: titulo;
+    text-align: center;
+    line-height: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    margin: 4px 0;
+    padding: 10px 20px;
+    font-size: 22px;
+}
+
+
+.linklike {
+  cursor:pointer;
+  color: hsl(195, 50%, 10%);
+  text-decoration:none;
+
+}
+
+.linklike:hover {
+  color: hsl(195, 50%, 10%);
+  text-decoration:none;
+  text-shadow: 1px 1px 1px #555;
+}
+
+.listaView{
+  width: 100%;
+}
+
+.listaView thead{
+  background-color: #7cced0;
+}
+
+.listaView tbody{
+  background-color: #daf1f1;
+}
+
+.listaView th, td {
+  border-bottom: 1px solid #666666;
+  padding: 15px;
+  text-align: left;
+}
+
+.listaView tbody tr:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.panel {
+	display: none;
+}
+
+#agenda {
+  height: 100%;
+}
+
+#agenda ul{
+  list-style-type: none;
+
+}
+
+/* Month header */
+.month {
+  padding: 0;
+  width: auto;
+  background: #a6e3e9;
+  height: 10%;
+  text-align: center;
+}
+
+#dummyRegista{
+  padding-top: 10%;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-top: 20px;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 0;
+  background: #eee;
+  height: 70%;
+  margin: 60px;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:20px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+
+.days li:hover{
+  background: rgb(201, 201, 201);
+}
+
+.days .active{
+  background: #1abc9c;
+  color: white;
+}
+
+.days .active:hover{
+  background: #15967c;
+  color: white;
+}
+
+
+#profile {
+      display: grid;
+      grid-template-rows: 80px 100px 60px auto;
+      grid-template-columns: 250px 100px auto auto 100px;
+      grid-template-areas:
+      "pic name name name age"
+      "pic numU numU contact contact"
+      "pic vaccine1 vaccine1 vaccine2 vaccine2"
+      "info info info info info";
+      max-width: 100%;
+      height: 100%;
+      margin: auto auto;
+      border: 5px solid #ffffff;
+}
+pic{
+    grid-area: pic;
+    border-bottom: 5px solid #ffffff;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+name, age, numU, contact{
+    background-color: #99dfe6;
+    text-align: left;
+    padding-top: 12px;
+}
+name{
+    grid-area: name;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 5px solid #ffffff;
+}
+age{
+    grid-area: age;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+age input{
+    text-align: center;
+}
+numU{
+    grid-area: numU;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-left: 5px solid #ffffff;
+}
+contact{
+    grid-area: contact;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+date1, date2{
+    background-color: #99dfe6;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 5px solid #ffffff;
+}
+date1{
+    grid-area: vaccine1;
+    border-right-width: 2.5px;
+}
+date2{
+    grid-area: vaccine2;
+    border-left-width: 2.5px;
+    border-right-width: 0px;
+}
+info{
+    grid-area: info;
+    background-color: #99dfe6;
+    padding: 20px 20px 20px 20px;
+}
+
+input[type=text]:not(.inForm) {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.selector{
+
+  padding: 15px 0 15px 15px;
+}
+
+
+select{
+  width: 140px;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.month select{
+  width: 20%;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.seleTable{
+  margin: 0;
+  border-radius: 0;
+}
+
+/* COLOR */
+
+nav li.active {
+    background-color: hsl(195, 50%, 80%);
+}
+
+body {
+    color: black;
+}
+
+main {
+    background-color: #a6e3e9;
+}
+
+header{
+    background-color: #71c9ce;
+}
+
+header h1 {
+    color: white;
+}
+
+nav {
+    background-color: #cbf1f5;
+}
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+/* Popup container */
+.popup {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+ visibility: hidden;
+ width: 220px;
+ background-color: #555;
+ color: #fff;
+ text-align: center;
+ border-radius: 6px;
+ padding: 8px 0;
+ position: absolute;
+ z-index: 1;
+ bottom: 125%;
+ left: 50%;
+ margin-left: -110px;
+ font-size: 18px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+ content: "";
+ position: absolute;
+ top: 100%;
+ left: 50%;
+ margin-left: -5px;
+ border-width: 5px;
+ border-style: solid;
+ border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+ visibility: visible;
+ -webkit-animation: fadeIn 1s;
+ animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity:1 ;}
+}
+
+/*#edit{
+  position: relative;
+  bottom: 50px;
+  left: 1080px;
+  padding: 5px 20px 5px 20px;
+}*/
+
+botao{
+  grid-area: botao;
+  text-align: center;
+  line-height: 100px;
+}
+
+#edit{
+
+  cursor:pointer;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  background-color: white;
+  border: 0px;
+  border-radius: 10px;
+}
+
+#profile textarea:read-only, #profile input:read-only{
+  background-color: #cccccc;
+}
+
+/*LOGIN*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* BASIC */
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+a {
+  color: #1abc9c;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 10px 8px;
+  color: #cccccc;
+}
+
+
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  margin: auto;
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/* TABS */
+
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #71c9ce;
+}
+
+
+
+/* FORM TYPOGRAPHY*/
+
+#login input[type=button],#login input[type=submit],#login input[type=reset]  {
+  background-color: #71c9ce;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#login input[type=button]:hover,#login input[type=submit]:hover,#login input[type=reset]:hover  {
+  background-color: #71c9ce;
+}
+
+#login input[type=button]:active,#login input[type=submit]:active,#login input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+#login input[type=text] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#login input[type=text]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #71c9ce;
+}
+
+#login input[type=text]:placeholder {
+  color: #cccccc;
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #71c9ce;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+  width:60%;
+}
+
+* {
+  box-sizing: border-box;
+}
